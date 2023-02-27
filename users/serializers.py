@@ -18,3 +18,25 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         exclude = ['password']
+
+
+class UserCreateSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(required=False)
+    location_id = serializers.SlugRelatedField(
+        many=True,
+        required=False,
+        queryset=Location.objects.all(),
+        slug_field="name"
+    )
+
+    class Meta:
+        model = User
+        fields = "__all__"
+
+    def create(self, validated_data):
+        user = super().create(validated_data)
+
+        user.set_password(user.password)
+        user.save()
+
+        return user

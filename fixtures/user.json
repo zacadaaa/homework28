@@ -1,7 +1,6 @@
 [
   {
-    "model": "ads.user",
-    "pk": 1,
+    "model": "users.user",
     "fields": {
       "first_name": "Павел",
       "last_name": "Никифоров",
@@ -9,12 +8,11 @@
       "password": "gZvptL",
       "role": "member",
       "age": 21,
-      "location": 1
+      "location": [1]
     }
   },
   {
-    "model": "ads.user",
-    "pk": 2,
+    "model": "users.user",
     "fields": {
       "first_name": "Альбина",
       "last_name": "Игнатьева",
@@ -22,12 +20,11 @@
       "password": "4fVqL2",
       "role": "moderator",
       "age": 24,
-      "location": 3
+      "location": [3]
     }
   },
   {
-    "model": "ads.user",
-    "pk": 3,
+    "model": "users.user",
     "fields": {
       "first_name": "Иван",
       "last_name": "Сысоев",
@@ -35,12 +32,11 @@
       "password": "o535pj",
       "role": "admin",
       "age": 29,
-      "location": 8
+      "location": [8]
     }
   },
   {
-    "model": "ads.user",
-    "pk": 4,
+    "model": "users.user",
     "fields": {
       "first_name": "Марина",
       "last_name": "Беркутова",
@@ -48,12 +44,11 @@
       "password": "d49rSO",
       "role": "moderator",
       "age": 19,
-      "location": 10
+      "location": [10]
     }
   },
   {
-    "model": "ads.user",
-    "pk": 5,
+    "model": "users.user",
     "fields": {
       "first_name": "Галина",
       "last_name": "Иванова",
@@ -61,12 +56,11 @@
       "password": "wCqlVE",
       "role": "member",
       "age": 41,
-      "location": 2
+      "location": [2]
     }
   },
   {
-    "model": "ads.user",
-    "pk": 6,
+    "model": "users.user",
     "fields": {
       "first_name": "Петр",
       "last_name": "Бойченко",
@@ -74,25 +68,23 @@
       "password": "xuR2jf",
       "role": "member",
       "age": 37,
-      "location": 4
+      "location": [4]
     }
   },
   {
-    "model": "ads.user",
-    "pk": 7,
+    "model": "users.user",
     "fields": {
       "first_name": "Никита",
-      "last_name": null,
+      "last_name": "Skypro",
       "username": "nikitapro",
       "password": "gzP4vR",
       "role": "member",
       "age": 26,
-      "location": 7
+      "location": [7]
     }
   },
   {
-    "model": "ads.user",
-    "pk": 8,
+    "model": "users.user",
     "fields": {
       "first_name": "Виолетта",
       "last_name": "Петушок",
@@ -100,12 +92,11 @@
       "password": "zo0rj6",
       "role": "member",
       "age": 24,
-      "location": 5
+      "location": [5]
     }
   },
   {
-    "model": "ads.user",
-    "pk": 9,
+    "model": "users.user",
     "fields": {
       "first_name": "Гульнара",
       "last_name": "Ибрагимова",
@@ -113,12 +104,11 @@
       "password": "daMocL",
       "role": "moderator",
       "age": 22,
-      "location": 9
+      "location": [9]
     }
   },
   {
-    "model": "ads.user",
-    "pk": 10,
+    "model": "users.user",
     "fields": {
       "first_name": "Борис",
       "last_name": "Зайка",
@@ -126,7 +116,7 @@
       "password": "sasha123456",
       "role": "member",
       "age": 35,
-      "location": 6
+      "location": [6]
     }
   }
 ]

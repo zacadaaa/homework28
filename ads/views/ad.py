@@ -1,13 +1,9 @@
-from rest_framework.generics import ListAPIView
-from rest_framework.viewsets import ModelViewSet
+from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
+from rest_framework.permissions import IsAuthenticated
 
 from ads.models import Ads
+from ads.permissions import IsOwner, IsStaff
 from ads.serializers import AdSerializer
-
-
-class AdViewSet(ModelViewSet):
-    queryset = Ads.objects.all()
-    serializer_class = AdSerializer
 
 
 class AdListView(ListAPIView):
@@ -35,3 +31,26 @@ class AdListView(ListAPIView):
             self.queryset = self.queryset.filter(price__lte=int(price_to))
 
         return super().get(request, *args, **kwargs)
+
+
+class AdDetailView(RetrieveAPIView):
+    queryset = Ads.objects.all()
+    serializer_class = AdSerializer
+    permission_classes = [IsAuthenticated]
+
+
+class AdCreateView(CreateAPIView):
+    queryset = Ads.objects.all()
+    serializer_class = AdSerializer
+
+
+class AdUpdateView(UpdateAPIView):
+    queryset = Ads.objects.all()
+    serializer_class = AdSerializer
+    permission_classes = [IsAuthenticated, IsOwner | IsStaff]
+
+
+class AdDeleteView(DestroyAPIView):
+    queryset = Ads.objects.all()
+    serializer_class = AdSerializer
+    permission_classes = [IsAuthenticated, IsOwner | IsStaff]
