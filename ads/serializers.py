@@ -1,8 +1,9 @@
 from rest_framework import serializers
 from rest_framework.relations import SlugRelatedField
 from rest_framework.serializers import ModelSerializer
-
+from rest_framework.fields import BooleanField
 from ads.models import Ads, Categories, Selection
+from ads.validators import not_true
 from users.models import User
 
 
@@ -13,6 +14,7 @@ class CategoriesSerializer(serializers.ModelSerializer):
 
 
 class AdSerializer(serializers.ModelSerializer):
+    is_published = BooleanField(validators=[not_true], required=False)
     author = serializers.SlugRelatedField(
         read_only=True,
         slug_field='username'
